@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 .title {
     font-size: 40px;
 
@@ -14,4 +16,9 @@
      font-style: italic;
      font-size: 20px;
     }    
+}
+
+.favorite-checkbox {
+    display: inline-block;
+    margin-top: 10px; 
 }

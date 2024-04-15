@@ -9,6 +9,7 @@ interface AuthData {
   token: string;
 }
 
+const SERVER_URL = 'http://127.0.0.1:8000';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,7 @@ export class AuthService {
    * Executes the authentication and updates the user token.
    */
   public authenticate(username: string, password: string): Observable<any> {
-    const url = `${environment.apiURL}/api-token-auth/`;
+    const url = `${SERVER_URL}/api-token-auth/`;
     const data = {username, password};
     return this.http.post<AuthData>(url, data).pipe(map((response) => {
       this.setToken(response.token);

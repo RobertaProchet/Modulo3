@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Cor de fundo */
+            margin: 20px; /* Margem em todas as direções */
+        }
+        .form-container {
+            background-color: #ffffff; /* Cor de fundo do formulário */
+            padding: 20px; /* Espaçamento interno do formulário */
+            border-radius: 5px; /* Arredondamento das bordas do formulário */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra do formulário */
+        }
+        /* Centralizar texto apenas para o título */
+        .form-container h2 {
+            text-align: center;
+        }
+        /* Classe para adicionar margem aos elementos de texto do formulário */
+        .form-group label {
+            margin-bottom: 5px; /* Margem inferior para os rótulos */
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="url"],
+        .form-group textarea {
+            margin-bottom: 10px; /* Margem inferior para os campos de entrada */
+        }
+    </style>
+</head>
+
+<body>
+
+<div *ngIf="isAdmin" class="form-container">
+  <h2>Cadastrar Novo Filme</h2>
+  <!-- Exibir mensagem de erro -->
+
+  
+  <form (ngSubmit)="onSubmit()" #movieForm="ngForm" action="/movies/" method="post">
+    <div class="form-group">
+      <label for="title"  class="color-label">Título:</label>
+      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newMovie.title" required placeholder="Digite o título aqui">
+    </div>
+    <div class="form-group">
+      <label for="year"  class="color-label">Ano:</label>
+      <input type="number" class="form-control" id="year" name="year" [(ngModel)]="newMovie.year" required  placeholder="Insira o ano no formato YYYY">
+    </div>
+    <div class="form-group">
+      <label for="cover"  class="color-label">URL da Capa:</label>
+      <input type="url" class="form-control" id="cover" name="cover" [(ngModel)]="newMovie.cover" required  placeholder="Insira a URL da imagem da capa">
+    </div>
+    <div class="form-group">
+      <label for="description"  class="color-label">Descrição:</label>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="newMovie.description" required placeholder="Insira a Sinopse do filme"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="midia"  class="color-label">URL da Mídia:</label>
+      <input type="url" class="form-control" id="midia" name="midia" [(ngModel)]="newMovie.midia" required placeholder="Insira a URL do trailer do filme">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!movieForm.valid">Cadastrar Filme</button>
+    <!-- Botão para limpar o formulário -->
+    <button type="button" class="btn btn-secondary" (click)="clearForm()">Limpar Formulário</button>
+    <!-- BACK TO INDEX -->
+    <button type="button" class="btn btn-secondary" style="background-color: #ff4081; border: 1px solid #ff4081;" routerLink="/">Voltar </button>
+
+    <p> </p>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+  </form>
+</div>
+
+</body>
+</html>

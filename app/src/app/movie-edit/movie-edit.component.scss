@@ -1,0 +1,52 @@
+.color-label {
+    color: black;
+    font-size: 16px;
+}
+
+.color-title {
+    color: black;
+    font-size: 25px;
+}
+
+  body {
+    background-color: #f0f0f0; /* Cor de fundo */
+    margin: 20px; /* Margem em todas as direções */
+}
+.form-container {
+    background-color: #ffffff; /* Cor de fundo do formulário */
+    padding: 20px; /* Espaçamento interno do formulário */
+    border-radius: 5px; /* Arredondamento das bordas do formulário */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra do formulário */
+}
+/* Centralizar texto apenas para o título */
+.form-container h2 {
+    text-align: center;
+}
+/* Classe para adicionar margem aos elementos de texto do formulário */
+.form-group label {
+    margin-bottom: 5px; /* Margem inferior para os rótulos */
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group textarea {
+    margin-bottom: 10px; /* Margem inferior para os campos de entrada */
+}
+
+.checkbox-container {
+    //display: flex;
+    margin-left: 5px;
+    align-items: center;
+    transform: scale(1.5); /* Ajuste o valor conforme necessário */
+}
+
+.button-save{
+    background-color: #059b35;
+    border: 1px solid #059b35;
+}
+
+.button-delet{
+    margin-left: 5px;
+    background-color: #dd1818;
+    border: 1px solid #dd1818;
+}

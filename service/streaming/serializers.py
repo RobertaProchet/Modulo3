@@ -31,7 +31,7 @@ class FavouriteSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Favourite
-        fields = ['url', 'user', 'user_id', 'movie', 'movie_id']
+        fields = ['url', 'id', 'user', 'user_id', 'movie', 'movie_id']
 
 
 class MovieWatchedSerializer(serializers.HyperlinkedModelSerializer):
@@ -40,4 +40,4 @@ class MovieWatchedSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = MovieWatched
-        fields = ['url', 'user', 'movie', 'date']
+        fields = ['url', 'id', 'user', 'movie', 'date']

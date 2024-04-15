@@ -134,8 +134,7 @@ Movie.objects.create(
 Movie.objects.create(
     title='Star Wars: Episode IV - A New Hope',
     year=1977,
-    cover='https://m.media-amazon.com/images/I/612h-jwI+EL._AC_UF1000,1000_QL80_.jpg'
-          'NzkwMjQ5NzM@._V1_UY400_CR0,0,260,400_AL_.jpg',
+    cover='https://m.media-amazon.com/images/I/612h-jwI+EL._AC_UF1000,1000_QL80_.jpg',
     description='Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the '
                 'galaxy from the Empire\'s world-destroying battle station, while also attempting to rescue Princess '
                 'Leia from the mysterious Darth Vader.',
